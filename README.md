@@ -1,1 +1,1 @@
-# -catalyst-count
+# catalyst-count
