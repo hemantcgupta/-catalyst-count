@@ -1,0 +1,56 @@
+:root {
+    --info-color: #CDE8F6;
+    --info-text-color: #447EAF;
+    --warn-color: #F8F4D5;
+    --warn-text-color: #96722E;
+    --error-color: #ECC8C5;
+    --error-text-color: #B83C37;
+    --success-color: #DDF3D5;
+    --success-text-color: #597151;
+}
+
+/* General Styles for Alerts */
+.alert {
+    padding: 15px;
+    background-color: var(--error-color); /* Default color for errors */
+    color: var(--error-text-color);
+    margin-bottom: 15px;
+    border-radius: 5px;
+    position: relative; /* To position the close button absolutely */
+    display: flex;
+    align-items: center;
+}
+
+.alert.success {
+    background-color: var(--success-color);
+    border: 2px solid darken(var(--success-color), 20%);
+    color: var(--success-text-color);
+}
+
+.alert.info {
+    background-color: var(--info-color);
+    border: 2px solid darken(var(--info-color), 20%);
+    color: var(--info-text-color);
+}
+
+.alert.warn {
+    background-color: var(--warn-color);
+    border: 2px solid darken(var(--warn-color), 20%);
+    color: var(--warn-text-color);
+}
+
+.closebtn {
+    position: absolute; /* Positioning the close button absolutely */
+    top: 10px;
+    right: 10px; /* Adjusted from 15px to ensure proper positioning */
+    color: inherit; /* Inherit color from parent */
+    font-weight: bold;
+    font-size: 20px; /* Adjust size as needed */
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}

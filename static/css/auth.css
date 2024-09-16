@@ -1,0 +1,80 @@
+/* static/css/styles.css */
+
+.navbar-inverse {
+    background-color: #d3d3d3; /* Light gray background color */
+    border-color: #ddd; /* Optional: Light gray border color */
+  }
+.navbar-inverse .navbar-nav > li > a {
+  color: #000; /* Optional: Set link color to black for better visibility */
+}
+.navbar-inverse .navbar-brand {
+  color: #000; /* Optional: Set brand text color to black */
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #555; /* Optional: Change color on hover */
+}
+.navbar-inverse .navbar-nav > li.active > a, 
+.navbar-inverse .navbar-nav > li > a:focus {
+    font-weight: bold;
+    color: black;
+    background-color: transparent; /* Ensure the background color stays transparent */
+}
+
+
+/* Container styling */
+.container {
+    padding: 0;
+    max-width: 350px; /* Set maximum width for better readability */
+    background-color: #f9f9f9; /* Light gray background color */
+    border-radius: 8px; /* Rounded corners for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+
+/* Header styling */
+.container h3 {
+font-weight: bold;
+background-color: lightgray;
+margin: 0;
+padding: 10px 20px 10px 20px;
+color: gray;
+margin-bottom: 20px; /* Add space below the header */
+border-top-left-radius: 8px;
+border-top-right-radius: 8px;
+}
+
+.login-box {
+    padding: 10px 20px 10px 20px;
+}
+
+/* Form styling */
+.form-group {
+margin-bottom: 15px; /* Space between form elements */
+}
+
+.form-group label {
+display: block; /* Make label block-level for better alignment */
+margin-bottom: 5px; /* Space between label and input */
+font-weight: bold; /* Make label text bold */
+}
+
+.form-control {
+width: 100%; /* Full width for input fields */
+padding: 10px; /* Add padding inside input fields */
+border: 1px solid #ccc; /* Light gray border */
+border-radius: 4px; /* Rounded corners for input fields */
+box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.btn-primary {
+background-color: #007bff; /* Bootstrap primary color */
+border-color: #007bff; /* Border color matching the button background */
+font-size: 16px; /* Slightly larger font size */
+border-radius: 4px; /* Rounded corners for the button */
+width: 100%; /* Full width for the button */
+cursor: pointer; /* Pointer cursor on hover */
+}
+
+.btn-primary:hover {
+background-color: #0056b3; /* Darker shade on hover */
+border-color: #004080; /* Darker border on hover */
+}

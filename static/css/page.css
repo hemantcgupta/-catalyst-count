@@ -1,0 +1,114 @@
+/* static/css/styles.css */
+
+.navbar-inverse {
+    background-color: #d3d3d3; /* Light gray background color */
+    border-color: #ddd; /* Optional: Light gray border color */
+  }
+.navbar-inverse .navbar-nav > li > a {
+  color: #000; /* Optional: Set link color to black for better visibility */
+}
+.navbar-inverse .navbar-brand {
+  color: #000; /* Optional: Set brand text color to black */
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #555; /* Optional: Change color on hover */
+}
+.navbar-inverse .navbar-nav > li.active > a, 
+.navbar-inverse .navbar-nav > li > a:focus {
+    font-weight: bold;
+    color: black;
+    background-color: transparent; /* Ensure the background color stays transparent */
+}
+
+
+/* Container styling */
+.container {
+    margin: 0;
+    max-width: 100%; /* Set maximum width for better readability */
+  }
+
+  .table-title h2 {
+    font-weight: bold;
+    margin: 6px;
+    font-size: 22px;
+}
+.table-title .add-new {
+    float: right;
+    height: 30px;
+    font-weight: bold;
+    font-size: 12px;
+    text-shadow: none;
+    min-width: 100px;
+    line-height: 13px;
+}
+
+.input-container {
+    position: relative;
+}
+
+.caret {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.dropdown-menu {
+    max-height: 200px; /* Adjust the height as needed */
+    overflow-y: auto; /* Enables vertical scrolling */
+}
+
+.dropdown-menu li {
+    padding: 5px;
+}
+
+.dropdown-menu label {
+    margin: 0;
+}
+
+.col-sm-4 {
+    padding: 10px 20px 10px 0;
+}
+
+.xDelete {
+  border-radius: 50%;         /* Makes the button circular */
+  background-color: black;   /* Sets the background color to black */
+  color: whitesmoke;          /* Sets the text color to a light shade */
+  border: none;               /* Removes default border */
+  padding: 8px;              /* Adds padding to increase button size */
+  text-align: center;         /* Centers text inside the button */
+  display: inline-block;      /* Ensures button can be styled and aligned inline */
+  font-size: 12px;            /* Sets a readable font size */
+  cursor: pointer;            /* Changes cursor to pointer to indicate it's clickable */
+  line-height: 1;             /* Ensures text is vertically centered */
+}
+
+.xDelete:hover {
+  background-color: darkred; /* Changes background color on hover */
+}
+
+.xDelete:focus {
+  outline: none;             /* Removes the outline when the button is focused */
+}
+
+.file-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.file-input input[type="file"] {
+  display: none;
+}
+
+.file-input button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

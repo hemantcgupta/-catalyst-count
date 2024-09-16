@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sign Up Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+  <link rel="stylesheet" href="{% static 'css/alerts.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+    <ul class="nav navbar-nav">
+        <li><a href="{% url 'get_users' %}">Users</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <form method="POST" action="{% url 'custom_logout' %}" style="display: inline;">
+                <button type="submit" class="btn btn-link navbar-btn">
+                    <span class="glyphicon glyphicon-user"></span> Logout
+                </button>
+            </form>
+        </li>
+    </ul>
+</div>
+</nav>
+  
+
+<div class="container">
+    {% include 'alerts.html' %}
+    <div class="continer-title"><h3>Add User to Continue</h3></div>
+    <div class="login-box">
+        <form method="POST" action="{% url 'add_user' %}">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" placeholder="Username" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Email" class="form-control" id="email" name="email" required>
+              </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control" id="password" name="password1" required>
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="confirm password" class="form-control" id="password" name="password2" required>
+              </div>
+            <button type="submit" class="btn btn-primary">Add User</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
