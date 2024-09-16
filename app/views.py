@@ -47,7 +47,7 @@ def custom_login(request):
             print(context)
             return redirect('upload_data')
         else:
-            return JsonResponse({'status': 'error', 'message': 'Invalid credentials'}, status=400)
+            return render(request, 'login.html', {'status': 'error', 'message': 'Invalid credentials'})
     return render(request, 'login.html')
 
 
