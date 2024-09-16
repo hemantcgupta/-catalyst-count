@@ -83,3 +83,44 @@ python manage.py runserver
 ```
 
 The API will be available at `http://localhost:8000/`.
+
+
+## API Endpoints
+
+Here are the available API endpoints for application:
+- **`/signup/`**
+  - **Method:** POST
+  - **Description:** Custom signup endpoint to create a new user. It uses `SignupForm` from `allauth` to handle user registration.
+
+- **`/login/`**
+  - **Method:** POST
+  - **Description:** Custom login endpoint for user authentication. It authenticates users based on username and password and logs them in if credentials are valid.
+
+- **`/logout/`**
+  - **Method:** POST
+  - **Description:** Custom logout endpoint to terminate the user session. Only POST requests are allowed.
+
+- **`/upload_data/`**
+  - **Method:** POST
+  - **Description:** Endpoint to upload data files. It saves the uploaded file and processes it in the background using a separate thread. The file is saved to the `uploads` directory.
+
+- **`/get_users/`**
+  - **Method:** GET
+  - **Description:** Endpoint to retrieve a list of users. It returns a rendered view of user data.
+
+- **`/add_user/`**
+  - **Method:** POST
+  - **Description:** Endpoint to add a new user to the database. It uses `SignupForm` from `allauth` to handle user registration.
+
+- **`/delete_user/`**
+  - **Method:** POST
+  - **Description:** Endpoint to delete a user from the database based on the provided user ID. It handles the deletion and returns the updated list of users.
+
+- **`/query_builder/`**
+  - **Method:** GET, POST
+  - **Description:** Endpoint for constructing and executing custom queries. It allows users to filter data based on various criteria (e.g., industry, year founded, city, state, country) and returns the filtered results.
+
+## Additional Notes
+
+- Ensure that the PostgreSQL server is running and accessible with the provided credentials.
+- For production environments, you should set `DEBUG` to `False` and configure other security settings accordingly.

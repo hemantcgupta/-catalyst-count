@@ -19,13 +19,17 @@ from models.query import prepareData, userData
 import re
 
 @csrf_exempt
+def redirect_to_login(request):
+    return redirect('custom_login')
+
+@csrf_exempt
 def custom_signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
         if form.is_valid():
             form.save(request)  
             context = {'status': 'success', 'message': 'User created successfully'}
-            redirect('custom_login')
+            return redirect('custom_login')
         else:
             return render(request, 'signup.html', {'status': 'error', 'message': form.errors})
     return render(request, 'signup.html')
@@ -39,9 +43,9 @@ def custom_login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)  
-            # return JsonResponse({'status': 'success', 'message': 'Logged in successfully'})
             context = {'status': 'success', 'message': 'Logged in successfully'}
-            redirect('upload_data')
+            print(context)
+            return redirect('upload_data')
         else:
             return JsonResponse({'status': 'error', 'message': 'Invalid credentials'}, status=400)
     return render(request, 'login.html')
@@ -52,10 +56,10 @@ def custom_login(request):
 def custom_logout(request):
     if request.method == 'POST':
         logout(request)  # Log the user out
-        return JsonResponse({'status': 'success', 'message': 'Logged out successfully'})
-    return JsonResponse({'status': 'error', 'message': 'Only POST requests are allowed'}, status=405)
+        return redirect('custom_login')
 
 @csrf_exempt
+@login_required
 def upload_data(request):
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)

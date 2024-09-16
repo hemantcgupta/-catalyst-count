@@ -19,6 +19,7 @@ env = environ.Env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
+LOGIN_URL = '/login/'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -94,6 +95,9 @@ LOGOUT_REDIRECT_URL = '/'  # Redirect URL after logout
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
+SESSION_COOKIE_AGE = 600  # 1 minute
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
